@@ -111,8 +111,8 @@ repackage(){
 	echo "Repackaging ..."
 	cd ${CURR_DIR}/${PACKAGE_NAME}
 	pip install --upgrade pip
-	pip download ${PIP_PLATFORM} -r requirements.txt -d ./wheels --index-url ${DEFAULT_PIP_MIRROR_URL} --trusted-host mirrors.aliyun.com
-	#pip download ${PIP_PLATFORM} -r requirements.txt -d ./wheels --index-url ${PIP_MIRROR_URL} --trusted-host mirrors.aliyun.com
+	#pip download ${PIP_PLATFORM} -r requirements.txt -d ./wheels --index-url ${DEFAULT_PIP_MIRROR_URL} --trusted-host mirrors.aliyun.com
+	pip download ${PIP_PLATFORM} -r requirements.txt -d ./wheels --index-url ${PIP_MIRROR_URL} --trusted-host mirrors.aliyun.com
 	if [[ $? -ne 0 ]]; then
 		echo "Pip download failed."
 		exit 1
