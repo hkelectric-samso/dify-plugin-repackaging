@@ -112,8 +112,8 @@ repackage(){
 	cd ${CURR_DIR}/${PACKAGE_NAME}
 	pip install --upgrade pip
 	#pip download ${PIP_PLATFORM} -r requirements.txt -d ./wheels --index-url ${DEFAULT_PIP_MIRROR_URL} --trusted-host mirrors.aliyun.com
-	echo "\nwheel==0.46.3" >> requirements.txt
-	echo "\nsetuptools==82.0.0" >> requirements.txt
+	printf '\nwheel==0.46.3' >> requirements.txt
+	printf '\nsetuptools==82.0.0' >> requirements.txt
 	pip download ${PIP_PLATFORM} -r requirements.txt -d ./wheels --index-url ${PIP_MIRROR_URL} --trusted-host mirrors.aliyun.com
 	#echo "pip download setuptools -d ./wheels --index-url ${PIP_MIRROR_URL} --trusted-host mirrors.aliyun.com"
 	#pip download setuptools -d ./wheels --index-url ${PIP_MIRROR_URL} --trusted-host mirrors.aliyun.com
