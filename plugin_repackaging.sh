@@ -112,9 +112,12 @@ repackage(){
 	cd ${CURR_DIR}/${PACKAGE_NAME}
 	pip install --upgrade pip
 	#pip download ${PIP_PLATFORM} -r requirements.txt -d ./wheels --index-url ${DEFAULT_PIP_MIRROR_URL} --trusted-host mirrors.aliyun.com
+	echo "wheel==0.46.3" >> requirements.txt
+	echo "setuptools==82.0.0" >> requirements.txt
 	pip download ${PIP_PLATFORM} -r requirements.txt -d ./wheels --index-url ${PIP_MIRROR_URL} --trusted-host mirrors.aliyun.com
-	echo "pip download --platform ${OPTARG} --only-binary=:all: setuptools -d ./wheels --index-url ${PIP_MIRROR_URL} --trusted-host mirrors.aliyun.com"
-	pip download --platform ${OPTARG} --only-binary=:all: setuptools -d ./wheels --index-url ${PIP_MIRROR_URL} --trusted-host mirrors.aliyun.com
+	#echo "pip download setuptools -d ./wheels --index-url ${PIP_MIRROR_URL} --trusted-host mirrors.aliyun.com"
+	#pip download setuptools -d ./wheels --index-url ${PIP_MIRROR_URL} --trusted-host mirrors.aliyun.com
+	#pip download setuptools -d ./wheels --index-url ${PIP_MIRROR_URL} --trusted-host mirrors.aliyun.com
 	if [[ $? -ne 0 ]]; then
 		echo "Pip download failed."
 		exit 1
