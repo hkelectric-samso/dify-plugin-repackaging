@@ -169,7 +169,7 @@ print_usage() {
 
 while getopts "p:s:" opt; do
 	case "$opt" in
-		p) PIP_PLATFORM="--platform ${OPTARG} --only-binary=:all:" ;;
+		p) PIP_PLATFORM="--platform ${OPTARG}" ;;
 		s) PACKAGE_SUFFIX="${OPTARG}" ;;
 		*) print_usage; exit 1 ;;
 	esac
